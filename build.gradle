@@ -24,3 +24,11 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+/* bootJar - for building jars 
+*   To create the jar, just run: `./gradlew bootJar`
+*   To run the jar, do: `java -jar build/libs/msgboard-1.0-SNAPSHOT.jar`
+*/
+bootJar {
+    mainClassName = 'app.MessageBoard'
+}
