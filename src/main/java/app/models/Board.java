@@ -1,10 +1,31 @@
 package app.models;
 
+import javax.persistence.*;
 import java.util.List;
 
 public class Board {
 
-    String title;
-    String description;
-    List<Thread> threads;
+    @Id
+    @GeneratedValue
+    @Column(name = "board_id")
+    private long id;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @OneToMany
+    @JoinColumn(name = "thread_id", nullable = false)
+    private List<Thread> threads;
+
+    public Board(){}
+
+    public Board(Board copy){
+        this.id = copy.id;
+        this.title = copy.title;
+        this.description = copy.description;
+        this.threads = copy.threads;
+    }
 }
