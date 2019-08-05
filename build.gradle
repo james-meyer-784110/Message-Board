@@ -17,15 +17,18 @@ repositories {
 dependencies {
     /* JUnit for Testing */
     testCompile group: 'junit', name: 'junit', version: '4.12'
-
     /* Spring Boot */
     implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    /* Thymeleaf */
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
-/* bootJar - for building jars 
+/* bootJar - for building jars
 *   To create the jar, just run: `./gradlew bootJar`
 *   To run the jar, do: `java -jar build/libs/msgboard-1.0-SNAPSHOT.jar`
 */
