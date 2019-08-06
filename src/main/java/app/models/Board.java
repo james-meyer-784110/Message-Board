@@ -28,4 +28,8 @@ public class Board {
         this.description = copy.description;
         this.threads = copy.threads;
     }
+
+    public String getTitle() {
+        return title;
+    }
 }
