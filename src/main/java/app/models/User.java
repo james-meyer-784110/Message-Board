@@ -8,7 +8,7 @@ public class User {
 
     public static final int MAX_FEILD_LENGTH = 64;
 
-    @Id @GeneratedValue @Column(name = "user_id")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "username", nullable = false, length = MAX_FEILD_LENGTH)

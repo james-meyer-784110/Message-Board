@@ -9,8 +9,7 @@ public class Post {
     public static final int MAX_MESSAGE_LEN = 1024;
 
     @Id
-    @GeneratedValue
-    @JoinColumn(name = "post_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne

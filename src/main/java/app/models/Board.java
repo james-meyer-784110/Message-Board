@@ -7,8 +7,7 @@ import java.util.List;
 public class Board {
 
     @Id
-    @GeneratedValue
-    @Column(name = "board_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "title")

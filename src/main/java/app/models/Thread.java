@@ -7,8 +7,7 @@ import java.util.List;
 public class Thread {
 
     @Id
-    @GeneratedValue
-    @JoinColumn(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
