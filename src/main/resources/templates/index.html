@@ -6,5 +6,8 @@
 </head>
 <body>
     <h1>Message Board</h1>
+    <div th:each="board : ${boards}">
+        <a th:text="${board.title}" th:href="@{'/b/'+${board.title}}"></a>
+    </div>
 </body>
 </html>

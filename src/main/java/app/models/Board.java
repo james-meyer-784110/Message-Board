@@ -32,4 +32,12 @@ public class Board {
     public String getTitle() {
         return title;
     }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public List<Thread> getThreads(){
+        return threads;
+    }
 }
