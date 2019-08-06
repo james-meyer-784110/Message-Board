@@ -3,11 +3,12 @@ package app.models;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity @Table(name = "threads")
 public class Thread {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
+    @JoinColumn(name = "id", nullable = false)
     private long id;
 
     @ManyToOne

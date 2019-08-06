@@ -2,6 +2,7 @@ package app.models;
 
 import javax.persistence.*;
 
+@Entity @Table(name = "posts")
 public class Post {
 
     public static final int MAX_TITLE_LEN = 128;
@@ -9,7 +10,7 @@ public class Post {
 
     @Id
     @GeneratedValue
-    @Column(name = "post_id")
+    @JoinColumn(name = "post_id", nullable = false)
     private long id;
 
     @ManyToOne

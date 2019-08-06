@@ -1,20 +1,14 @@
 package app.models;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity @Table(name = "users")
 public class User {
 
     public static final int MAX_FEILD_LENGTH = 64;
 
-    @Id
-    @GeneratedValue
-    @Column(name = "user_id")
+    @Id @GeneratedValue @Column(name = "user_id")
     private long id;
 
     @Column(name = "username", nullable = false, length = MAX_FEILD_LENGTH)

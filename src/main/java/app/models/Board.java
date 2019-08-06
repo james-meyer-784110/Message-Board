@@ -3,6 +3,7 @@ package app.models;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity @Table(name = "boards")
 public class Board {
 
     @Id
