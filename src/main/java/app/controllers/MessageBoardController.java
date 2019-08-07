@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MessageBoardController {
@@ -23,6 +24,11 @@ public class MessageBoardController {
         debug("Serving index");
         model.addAttribute("boards", boardRepo.findAll());
         return "index";
+    }
+
+    @PostMapping("/create-board")
+    public String createBoard(){
+        return "board";
     }
 
     @GetMapping("/b/{boardTitle}")

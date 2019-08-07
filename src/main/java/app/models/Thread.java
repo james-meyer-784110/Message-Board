@@ -24,8 +24,8 @@ public class Thread {
     @Column(name = "title", nullable = false, length = MAX_TITLE_LENGTH)
     private String title;
 
-    @Column(name = "created", nullable = false)
-    private String created;
+    @Column(name = "time_stamp", nullable = false)
+    private String timestamp;
 
     @Column(name = "hash_id", nullable = false, length = HASH_ID_LENGTH)
     private String hashId;
@@ -37,11 +37,15 @@ public class Thread {
         this.board = copy.board;
         this.posts = copy.posts;
         this.title = copy.title;
-        this.created = copy.created;
+        this.timestamp = copy.timestamp;
         this.hashId = copy.hashId;
     }
 
     public String getTitle(){
         return this.title;
+    }
+
+    public String getTimestamp(){
+        return this.timestamp;
     }
 }

@@ -22,6 +22,9 @@ public class Post {
     @Column(name = "message", nullable = false, length = MAX_MESSAGE_LEN)
     private String message;
 
+    @Column(name = "time_stamp", nullable = false)
+    private String timestamp;
+
     public Post(){}
 
     public Post(final Post copy){
@@ -29,6 +32,7 @@ public class Post {
         this.author = copy.author;
         this.thread = copy.thread;
         this.message = copy.message;
+        this.timestamp = copy.timestamp;
     }
 
     public final User getAuthor(){
@@ -37,5 +41,9 @@ public class Post {
 
     public final String getMessage(){
         return this.message;
+    }
+
+    public String getTimestamp(){
+        return this.timestamp;
     }
 }
