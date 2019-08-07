@@ -12,11 +12,11 @@ public class Result<R,E> {
         this.error = error;
     }
 
-    public static Result<Object,Object> ok(Object result){
-        return new Result<>(result, null);
+    public static <R,E> Result<R,E> ok(R result){
+        return new Result<R,E>(result, null);
     }
 
-    public static Result<Object,Object> err(Object error){
+    public static <R,E> Result<R,E> err(E error){
         return new Result<>(null, error);
     }
 
@@ -45,7 +45,7 @@ public class Result<R,E> {
     public R unwrapOrElse(Runnable runnable){
         if(!this.isOk()){
             runnable.run();
-            System.exit(0);
+            throw new RuntimeException();
         }
         return result;
     }

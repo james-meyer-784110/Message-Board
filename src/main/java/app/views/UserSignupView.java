@@ -1,10 +1,14 @@
 package app.views;
 
 import app.models.User;
+import app.util.Result;
 
 import java.util.Optional;
 
 public class UserSignupView extends User {
+
+    public static final int PASSWORD_MISMATCH = 1;
+    public static final int NULL_VALUE = 2;
 
     private String confirmPassword;
 
@@ -27,14 +31,13 @@ public class UserSignupView extends User {
         return this.confirmPassword;
     }
 
-    public Optional<User> toUser(){
-        if(this.confirmPassword.equals(this.getPassword())
-                && this.getUsername() != null
-                && this.getPassword() != null
-                && this.getEmail() != null) {
-            return Optional.of(new User(this.getUsername(), this.getEmail(), this.getPassword(), null));
-        }else{
-            return Optional.empty();
+    public Result<User,Integer> toUser(){
+        if(this.getUsername() == null || this.getEmail() == null || this.getPassword() == null || this.getConfirmPassword() == null){
+            return Result.err(NULL_VALUE);
         }
+        else if(!this.confirmPassword.equals(this.getPassword())){
+            return Result.err(PASSWORD_MISMATCH);
+        }
+        return Result.ok(new User(this.getUsername(), this.getEmail(), this.getPassword(), null));
     }
 }
