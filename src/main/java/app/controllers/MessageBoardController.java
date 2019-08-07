@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class MessageBoardController {
 
     private void debug(String msg){
-        System.out.println("[DEBIG]: " + msg);
+        System.out.println("[DEBUG]: " + msg);
     }
 
     @Autowired
