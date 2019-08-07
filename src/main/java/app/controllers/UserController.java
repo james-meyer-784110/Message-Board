@@ -32,9 +32,9 @@ public class UserController {
         if(result.isPresent()){
             User user = userSignupView.toUser().get();
             userRepo.save(user);
-            return "redirect:/";
+            return "redirect:/login";
         }else{
-            return null;
+            return "redirect:/";
         }
     }
 
