@@ -27,7 +27,7 @@ public class Post {
 
     public Post(){}
 
-    public Post(final Post copy){
+    public Post(Post copy){
         this.id = copy.id;
         this.author = copy.author;
         this.thread = copy.thread;
@@ -35,11 +35,11 @@ public class Post {
         this.timestamp = copy.timestamp;
     }
 
-    public final User getAuthor(){
+    public User getAuthor(){
         return this.author;
     }
 
-    public final String getMessage(){
+    public String getMessage(){
         return this.message;
     }
 

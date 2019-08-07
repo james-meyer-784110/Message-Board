@@ -15,7 +15,7 @@ VALUES ('Alice', 'alice@email.com', 'password123'),
 INSERT into boards (title, description)
 VALUES ('Cooking', 'The process by which meat and plant matter is made digestible for homosapiens.'),
     ('Music', 'Sounds produced in mathematical sequences that provide homosapiens with visceral reactions.'),
-    ('Non-homosapiens', 'A board for sentient, possibly non-bipedal life forms.');
+    ('Non-homosapiens', 'A board for sentient, possibly non-bipedal life views.');
 
 INSERT into threads (board_id, title, time_stamp)
 VALUES (1, 'First time eating food!', '2019.08.07.08:30:15'),

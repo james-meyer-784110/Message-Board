@@ -32,4 +32,41 @@ public class User {
         this.password = copy.password;
         this.posts = copy.posts;
     }
+
+    public User(String username, String email, String password, List<Post> posts){
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.posts = posts;
+    }
+
+    public void setUsername(String username){
+        if(username.length() <= MAX_FEILD_LENGTH){
+            this.username = username;
+        }
+    }
+
+    public void setEmail(String email){
+        if(email.length() <= MAX_FEILD_LENGTH) {
+            this.email = username;
+        }
+    }
+
+    public void setPassword(String password){
+        if(password.length() <= MAX_FEILD_LENGTH) {
+            this.password = password;
+        }
+    }
+
+    public String getPassword(){
+        return this.password;
+    }
+
+    public String getUsername(){
+        return this.username;
+    }
+
+    public String getEmail(){
+        return this.email;
+    }
 }

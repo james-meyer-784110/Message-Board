@@ -29,15 +29,15 @@ public class Board {
         this.threads = copy.threads;
     }
 
-    public final String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public final String getDescription(){
+    public String getDescription(){
         return description;
     }
 
-    public final List<Thread> getThreads(){
+    public List<Thread> getThreads(){
         return threads;
     }
 }

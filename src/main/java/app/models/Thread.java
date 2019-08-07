@@ -32,7 +32,7 @@ public class Thread {
 
     public Thread(){}
 
-    public Thread(final Thread copy){
+    public Thread(Thread copy){
         this.id = copy.id;
         this.board = copy.board;
         this.posts = copy.posts;
